@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出层组件-artDialog</title>
+    <link rel="stylesheet" href="./../public/css/iframe.css"/>
+    <link rel="stylesheet" href="./dialog/css/ui-dialog.css"/>
+</head>
+<body>
+    <h1 class="level-1-header p-b10">artDialog</h1>
+    <p class="level-1-p p-b10">弹出层组件</p>
+    <p class="level-2-p p-b15 c-zab">
+        artDialog —— 经典的网页对话框组件，内外皆用心雕琢。 <br/>
+        支持普通与 12 方向气泡状对话框<br/>
+        完善的焦点处理，自动焦点附加与回退<br/>
+        支持 ARIA 标准<br/>
+        面向未来：基于 HTML5 Dialog 的 API<br/>
+        支持标准与模态对话框<br/>
+        丰富且友好的编程接口<br/>
+        能自适应内容尺寸<br/>
+        仅 4kb (gzip)
+    </p>
+    <div class="waring">
+        <h4>调用时请看API</h4>
+    </div>
+    <h1 class="level-1-header p-b10">示例</h1>
+    <!--示例一-->
+    <p class="level-1-p p-b10">普通对话框</p>
+    <pre class="language-javascript">
+<code class="language-javascript">
+var d = dialog({
+    title: '欢迎',
+    content: '欢迎使用 artDialog 对话框组件！'
+});
+d.show();
+</code>
+    </pre>
+    <p><a class="btn js-first-show" href="javascript:;">Run</a></p>
+    <!--示例一-->
+    <!--示例二-->
+    <p class="level-1-p p-t15 p-b10">添加按钮</p>
+    <pre class="language-javascript">
+<code class="language-javascript">
+var d = dialog({
+    title: '提示',
+    content: '按钮回调函数返回 false 则不许关闭',
+    okValue: '确定',
+    ok: function () {
+        this.title('提交中…');
+        return false;
+    },
+    cancelValue: '取消',
+    cancel: function () {}
+});
+d.show();
+</code>
+    </pre>
+    <p><a class="btn js-second-show" href="javascript:;">Run</a></p>
+    <!--示例二-->
+    <script src="./../public/js/prism.js"></script>
+    <script src="./../public/js/prism.plugins.js"></script>
+    <script src="./../public/js/require.js"></script>
+    <script src="./../public/js/requireConfig.js"></script>
+    <script>
+        require(['jquery', 'dialog'], function(jQuery, dialog) {
+            jQuery('.js-first-show').on('click', function() {
+                var d = dialog({
+                    title: '欢迎',
+                    content: '欢迎使用 artDialog 对话框组件！'
+                });
+                d.show();
+            });
+            jQuery('.js-second-show').on('click', function() {
+                var d = dialog({
+                    title: '提示',
+                    content: '按钮回调函数返回 false 则不许关闭',
+                    okValue: '确定',
+                    ok: function () {
+                        this.title('提交中…');
+                        return false;
+                    },
+                    cancelValue: '取消',
+                    cancel: function () {}
+                });
+                d.show();
+            });
+        });
+    </script>
+</body>
+</html>

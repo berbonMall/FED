@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML模板-artTemplate</title>
+    <link rel="stylesheet" href="./../public/css/iframe.css"/>
+</head>
+<body>
+    <h1 class="level-1-header p-b10">artTemplate</h1>
+    <p class="level-1-p p-b10">HTML模板</p>
+    <p class="level-2-p p-b15 c-zab">
+        性能卓越，执行速度通常是 Mustache 与 tmpl 的 20 多倍（性能测试） <br/>
+        支持运行时调试，可精确定位异常模板所在语句（演示）<br/>
+        对 NodeJS Express 友好支持<br/>
+        安全，默认对输出进行转义、在沙箱中运行编译后的代码（Node版本可以安全执行用户上传的模板）<br/>
+        支持include语句<br/>
+        可在浏览器端实现按路径加载模板（详情）<br/>
+        支持预编译，可将模板转换成为非常精简的 js 文件<br/>
+        模板语句简洁，无需前缀引用数据，有简洁版本与原生语法版本可选<br/>
+        支持所有流行的浏览器
+    </p>
+    <div class="waring">
+        <h4>调用时请看API</h4>
+    </div>
+    <h1 class="level-1-header p-b10">示例</h1>
+    <!--示例一-->
+    <p class="level-1-p p-b10">编写模板</p>
+    <pre class="language-markup">
+<code class="language-markup">
+<textarea name="" id="" cols="30" rows="10">
+<script id="test" type="text/html">
+    <h1>{{title}}</h1>
+    <ul>
+        {{each list as value i}}
+        <li>索引 {{i + 1}} ：{{value}}</li>
+        {{/each}}
+    </ul>
+ </script>
+</textarea>
+</code>
+    </pre>
+    <p class="level-1-p p-t10 p-b10">渲染模板</p>
+    <pre class="language-javascript">
+<code class="language-javascript">
+var data = {
+    title: '标签',
+    list: ['文艺', '博客', '摄影', '电影', '民谣', '旅行', '吉他']
+};
+var html = template('test', data);
+document.getElementById('content').innerHTML = html;
+</code>
+    </pre>
+    <p><a class="btn js-first-show" href="javascript:;">Run</a></p>
+    <!--示例一-->
+    <p class="level-1-p p-t10 p-b10">结果展示</p>
+    <div class="result">
+sfsdfsdfsdf
+    </div>
+    <script id="test" type="text/html">
+        <h1>{{title}}</h1>
+        <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul>
+    </script>
+    <script src="./../public/js/prism.js"></script>
+    <script src="./../public/js/prism.plugins.js"></script>
+    <script src="./../public/js/require.js"></script>
+    <script src="./../public/js/requireConfig.js"></script>
+    <script>
+        require(['jquery', 'artTemplate'], function(jQuery, artTemplate) {
+            jQuery('.js-first-show').on('click', function() {
+                var data = {
+                    title: 'BerbonMallFED',
+                    list: ['郭凡', '刘建华', '覃燕', '王兴', '袁曹喜', '马庆六', '边疆']
+                };
+                var html = artTemplate('test', data);
+                jQuery('.result').html(html);
+            });
+        });
+    </script>
+</body>
+</html>

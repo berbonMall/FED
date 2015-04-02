@@ -1,0 +1,35 @@
+@import "./base.scss";
+@import "./layout.scss";
+@import "./prism.scss";
+.level-1-header{
+  font-size: 36px;
+  line-height: 1;
+  border-bottom: 1px solid #e1e1e1;
+  margin-bottom: 20px;
+  font-weight: 400
+}
+.level-1-p {
+  font-size: 18px;
+  line-height:20px;
+}
+.level-2-p {
+  font-size: 14px;
+  line-height:25px;
+}
+.waring{
+  padding: 20px;
+  border: 1px solid #e1e1e1;
+  border-left:5px solid #ce4844;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  h4 {
+    color:#ce4844;
+    font-size: 18px;
+    font-weight: 400
+  }
+}
+.result {
+  padding:10px;
+  background-color:#FFFEEA;
+}
+

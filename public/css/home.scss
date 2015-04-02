@@ -1,0 +1,27 @@
+@import "./base.scss";
+@import "./layout.scss";
+body {
+  color:#34495E
+}
+/*header*/
+.home-header {
+  font-size: 90px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 100px;
+
+}
+.head-desc {
+  font-size:14px;
+  font-weight:bold;
+}
+.h-module {
+  width:100%;
+  height:100px;
+  margin-bottom:15px;
+  background-color:#34495E;
+  color:#fff;
+  text-align:center;
+  line-height:100px;
+  letter-spacing:2px;
+}

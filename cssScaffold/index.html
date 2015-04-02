@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>css组件</title>
+    <link rel="stylesheet" href="./../public/css/doc.css"/>
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="container">
+            <ul class="quick-nav">
+                <li><a href="./../index.html">欢迎页</a></li>
+                <li><a href="./../home.html">HOME页</a></li>
+                <li><a href="./../jsScaffold/index.html">JS组件</a></li>
+                <li><a href="javascript:;" class="cur">CSS组件</a></li>
+                <li><a href="./../htmlScaffold/index.html">HTML组件</a></li>
+                <li><a href="./../product/index.html">产品组件</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container p-t80 clearfix">
+        <div class="left-content f-l">
+            <iframe id="frame" class="w-p100"  frameborder="no" src="button.html" scrolling="no" allowtransparency="yes"></iframe>
+        </div>
+        <div class="right-menu f-l">
+            <div id="menuWrap" class="menu-wrap">
+                <ul class="menu-list" id="menu"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="./../public/js/webConfig.js"></script>
+    <script src="./../public/js/require.js"></script>
+    <script src="./../public/js/requireConfig.js"></script>
+    <script>
+        require(['jquery', 'autoIframeHeight', 'buildMenu'], function(jQuery , autoIframeHeight, menu) {
+            menu.buildMenu('#frame', '#menu', menuList.cssScaffoldMenu);
+            window.setInterval(function(){autoIframeHeight.setHeight('#frame')},100);
+        });
+    </script>
+</body>
+</html>
