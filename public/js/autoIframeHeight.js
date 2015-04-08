@@ -14,10 +14,16 @@ define(['jquery'], function(jQuery) {
      */
     function setIframeScrollHeight(id) {
         var iframe = jQuery(id),
-        scrollHeight = iframe[0].contentWindow.document.body.scrollHeight;
-        iframe.css({
-            height : scrollHeight
-        });
+            scrollHeight;
+            try{
+                scrollHeight = iframe[0].contentWindow.document.body.scrollHeight;
+                iframe.css({
+                    height : scrollHeight
+                });
+            }catch(err) {
+                console.log('获取iframe的scrollHeight异常！');
+            }
+
     }
     return {
         setHeight : setIframeScrollHeight
