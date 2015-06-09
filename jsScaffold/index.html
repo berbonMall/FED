@@ -32,9 +32,10 @@
     <script src="./../public/js/require.js"></script>
     <script src="./../public/js/requireConfig.js"></script>
     <script>
-        require(['jquery', 'autoIframeHeight', 'buildMenu'], function(jQuery , autoIframeHeight, menu) {
+        require(['jquery', 'autoIframeHeight', 'buildMenu', 'amd-cmd'], function(jQuery , autoIframeHeight, menu, amd) {
             menu.buildMenu('#frame', '#menu', menuList.jsScaffoldMenu);
             window.setInterval(function(){autoIframeHeight.setHeight('#frame')},100);
+            amd.say('fancy');
         });
     </script>
 </body>

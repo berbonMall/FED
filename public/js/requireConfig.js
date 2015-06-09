@@ -8,7 +8,7 @@
             'artTemplate' : './jsScaffold/artTemplate/js/template',
             'autoIframeHeight' : './public/js/autoIframeHeight',
             'buildMenu' : './public/js/buildMenu',
-            //'amd-cmd' : './public/js/amd-cmd',
+            'amd-cmd' : './public/js/amd-cmd',
         },
         shim: {
             'dialog': {
